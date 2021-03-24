@@ -1,7 +1,5 @@
 package prjuf2;
 
-import jdk.jshell.execution.Util;
-
 import java.util.Scanner;
 
 public class GestorTaulell {
@@ -12,10 +10,8 @@ public class GestorTaulell {
     int totalMalats = 0;
 
     public void carregar(Taulell t) {
-        System.out.println("Introdueix el numero de files");
-        int files = in.nextInt();
-        System.out.println("Introdueix el numero de columnes");
-        int columnes = in.nextInt();
+        int files = Utils.validarEnter("Insert the number of rows","You have to insert a numeric value");
+        int columnes = Utils.validarEnter("Insert the number of columns","You have to insert a numeric value");
         t.setFiles(files);
         t.setColumnes(columnes);
         t.createTaulellBuit();
@@ -33,22 +29,16 @@ public class GestorTaulell {
         while (n == 1) {
             int x = Utils.validarRangFiles(t,"Incorrect row, try again");
             int y = Utils.validarRangColumnes(t,"Incorrect column, try again");
-            System.out.println("Number of sick person you want to insert");
-            numMalalts += in.nextInt();
+            numMalalts += Utils.validarRangMalalts("You have to insert a number higher than 0");
             totalMalats += numMalalts;
-            while (numMalalts <= 0) {
-                System.out.println("Número no vàlid, torna a probar");
-                numMalalts = in.nextInt();
-            }
             t.setCasella(x, y, numMalalts);
-            System.out.println("Vols introduir un altre/s malalt/s?\n1.Introduir més malalts\n0.Sortir");
-            n = in.nextInt();
+            Interficie.mostrarMissatge("Do you want to insert more sick persons?\n1. Insert more sick persons\n0. Back to menu");
+            n = Utils.validarSortida("");
         }
     }
 
     public void transmetreVirus(Taulell t) {
-        System.out.println("Introdueix el rt(ratio de transmisió)");
-        float rt = in.nextFloat();
+        float rt = Utils.validarRt("You have to insert a number higher than 0");
         for (int i = 0; i < t.getFiles(); i++) {
             for (int j = 0; j < t.getColumnes(); j++) {
                 t.getT()[i][j] += t.getT()[i][j] * rt;
@@ -62,22 +52,19 @@ public class GestorTaulell {
         int n;
         int r;
         int f;
-        System.out.println("Vols curar malalts globalment o concretament?\n1.Globalment\n2.Concretament");
-        n = in.nextInt();
-        if (n == 1) {
-            System.out.println("Has seleccionat l'opció de globalment\nVols curar en '%' concret o random?" +
-                    "\n1.Concret\n2.Random");
-            r = in.nextInt();
-            if (r == 1) {
-                System.out.println("Has seleccionat curar globalment en % concret\nIntrodueix el % desitjat");
-                percentatge = in.nextFloat();
+        n = Utils.validarSortida("Do you want to heal globally or specifically?\n0. Globally\n1. Specifically");
+        if (n == 0) {
+            r = Utils.validarSortida("You have selected the option of globally\nDo you want to heal in specifically or random '%'" +
+                    "\n0. Specifically\n1. Random");
+            if (r == 0) {
+                percentatge = Utils.validarPercentatge("You have to insert a number higher than 0");
                 for (int i = 0; i < t.getFiles(); i++) {
                     for (int j = 0; j < t.getColumnes(); j++) {
                         t.getT()[i][j] = t.getT()[i][j] * (percentatge / 100);
                     }
                 }
             } else {
-                System.out.println("Has seleccionat curar globalment en % random");
+                Interficie.mostrarMissatge("You have selected globally heal in random '%'");
                 percentatge = (int) (Math.random() * 100) + 1;
                 for (int i = 0; i < t.getFiles(); i++) {
                     for (int j = 0; j < t.getColumnes(); j++) {
@@ -86,17 +73,14 @@ public class GestorTaulell {
                 }
             }
         } else {
-            System.out.println("Has seleccionat l'opció de concretament\nIntrodueix la fila desitjada");
-            int x = in.nextInt() - 1;
-            System.out.println("Introdueix la columna desitjada");
-            int y = in.nextInt() - 1;
-            System.out.println("Vols curar en '%' o per un valor concret?\n1.%\n2.Valor concret");
-            r = in.nextInt();
-            if (r == 1) {
+            int x = Utils.validarRangFiles(t,"Incorrect row, try again");
+            int y = Utils.validarRangColumnes(t,"Incorrect column, try again");
+            r = Utils.validarSortida("Do you want to heal in '%' or specifically value\n0. %\n1. Specifically");
+            if (r == 0) {
                 System.out.println("Has seleccionat curar en %\nVols introduir un % concret o random?" +
-                        "\n1.Concret\n2.Random");
+                        "\n0. Concret\n1. Random");
                 f = in.nextInt();
-                if (f == 1) {
+                if (f == 0) {
                     System.out.println("Has seleccionat curar en una posició concreta en % concret\nIntrodueix el % desitjat");
                     percentatge = in.nextFloat();
                     t.getT()[x][y] = (t.getT()[x][y]) * (percentatge / 100);
