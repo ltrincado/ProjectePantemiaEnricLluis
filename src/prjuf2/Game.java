@@ -25,6 +25,10 @@ public class Game {
             opcio = in.nextInt();
             switch (opcio) {
                 case 1:
+                    Interficie.mostrarCapçalera("Has seleccionat l'opció de crear un taulell random");
+                    g.carregarR(t);
+                    g.totalMalats += g.sumArray(t);
+                    System.out.println(t.toString());
                     break;
                 case 2:
                     Interficie.mostrarCapçalera("Has seleccionat l'opció de crear el teu propi taulell");
@@ -46,19 +50,21 @@ public class Game {
                     Interficie.mostrarCapçalera("Has seleccionat l'opcio de curar malalts");
                     g.curarMalalts(t);
                     perCurades += perTotals - GestorTaulell.sumArray(t);
-                    dades[1] = "Número total de persones curades: " + perCurades;
                     System.out.println(t.toString());
                     break;
                 case 6:
                     Interficie.mostrarCapçalera("Has seleccionat l'opcio de desplaçar malalts");
-                    dades[2] = "% que no ha complert el confinament: " + GestorTaulell.sumDesplaçats(t,quantitatMalalts);
                     g.desplacarMalalts(t);
                     System.out.println(t.toString());
                     break;
                 case 7:
                     dades[0] = "Número total de malalts actualment: " + GestorTaulell.sumArray(t);
+                    dades[1] = "Número total de persones curades: " + perCurades;
+                    dades[2] = "% que no ha complert el confinament: " + GestorTaulell.sumDesplaçats(t, g.perDesplacades, g.totalMalats) + "%";
+                    dades[3] = "Número total de persones fugides: " + g.perFugides;
                     Interficie.mostrarCapçalera("Has seleccionat l'opció de mostrar informació");
                     Interficie.mostrarDades(dades);
+                    System.out.println(t.toString());
                     break;
                 case 0:
                     System.out.println("GAME OVER");

@@ -1,9 +1,15 @@
 package prjuf2;
 
+import jdk.jshell.execution.Util;
+
 import java.util.Scanner;
 
 public class GestorTaulell {
     Scanner in = new Scanner(System.in);
+    int numMalalts = 0;
+    int perDesplacades = 0;
+    int perFugides = 0;
+    int totalMalats = 0;
 
     public void carregar(Taulell t) {
         System.out.println("Introdueix el numero de files");
@@ -14,24 +20,22 @@ public class GestorTaulell {
         t.setColumnes(columnes);
         t.createTaulellBuit();
     }
+    public void carregarR(Taulell t) {
+        int files = Utils.validarEnter("Insert the number of rows","You have to insert a numeric value");
+        int columnes = Utils.validarEnter("Insert the number of columns","You have to insert a numeric value");
+        t.setFiles(files);
+        t.setColumnes(columnes);
+        t.createTaulellRandom();
+    }
 
     public void introduirMalalts(Taulell t) {
         int n = 1;
         while (n == 1) {
-            System.out.println("Introdueix en quina fila el/s vols situar");
-            int x = in.nextInt() - 1;
-            while (x <= 0 || x >= t.getFiles()) {
-                System.out.println("Fila incorrecta, torna a probar");
-                x = in.nextInt() - 1;
-            }
-            System.out.println("Introdueix en quina columna el/s vols situar");
-            int y = in.nextInt() - 1;
-            while (y <= 0 || y >= t.getColumnes()) {
-                System.out.println("Fila incorrecta, torna a probar");
-                y = in.nextInt() - 1;
-            }
-            System.out.println("Quantitat de malalts que vols introduir");
-            int numMalalts = in.nextInt();
+            int x = Utils.validarRangFiles(t,"Incorrect row, try again");
+            int y = Utils.validarRangColumnes(t,"Incorrect column, try again");
+            System.out.println("Number of sick person you want to insert");
+            numMalalts += in.nextInt();
+            totalMalats += numMalalts;
             while (numMalalts <= 0) {
                 System.out.println("Número no vàlid, torna a probar");
                 numMalalts = in.nextInt();
@@ -50,6 +54,7 @@ public class GestorTaulell {
                 t.getT()[i][j] += t.getT()[i][j] * rt;
             }
         }
+        totalMalats=sumArray(t);
     }
 
     public void curarMalalts(Taulell t) {
@@ -117,7 +122,6 @@ public class GestorTaulell {
     }
 
     public void desplacarMalalts(Taulell t) {
-        int count = 0;
         System.out.println("Selecciona una fila");
         int x = in.nextInt() - 1;
         System.out.println("Selecciona una columna");
@@ -128,40 +132,73 @@ public class GestorTaulell {
             System.out.println("El número de persones que vols desplaçar és superior a les persones de la casella, torna a probar");
             quantitatMalalts = in.nextInt();
         }
+        perDesplacades += quantitatMalalts;
         System.out.println("En quina direcció els vols desplaçar?\nQ.Dalt esquerra\nW.Endavant\nE.Dalt dreta\nA.Esquerra\nD.Dreta\nZ.Baix esquerra\nX.Baix)\nC.Baix dreta");
         String direccio = in.next().toLowerCase();
         switch (direccio) {
             case "q" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x - 1][y - 1] += quantitatMalalts;
+                if (x - 1>= t.getFiles() || y - 1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                } else {
+                    t.getT()[x - 1][y - 1] += quantitatMalalts;
+                }
             }
             case "w" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x - 1][y] += quantitatMalalts;
+                if (x - 1 >= t.getFiles() || y >= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                }else{
+                    t.getT()[x - 1][y] += quantitatMalalts;
+                }
             }
             case "e" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x - 1][y + 1] += quantitatMalalts;
+                if (x - 1>= t.getFiles() || y + 1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                }else{
+                    t.getT()[x - 1][y + 1] += quantitatMalalts;
+                }
             }
             case "a" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x][y - 1] += quantitatMalalts;
+                if (x >= t.getFiles() || y - 1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                } else{
+                    t.getT()[x][y - 1] += quantitatMalalts;
+                }
             }
             case "d" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x][y + 1] += quantitatMalalts;
+                if (x >= t.getFiles() || y + 1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                }else{
+                    t.getT()[x][y + 1] += quantitatMalalts;
+                }
             }
             case "z" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x + 1][y - 1] += quantitatMalalts;
+                if (x + 1>= t.getFiles() || y -1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                } else{
+                    t.getT()[x + 1][y - 1] += quantitatMalalts;
+                }
             }
             case "x" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x + 1][y] += quantitatMalalts;
+                if (x + 1 >= t.getFiles() || y >= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                }else {
+                    t.getT()[x + 1][y] += quantitatMalalts;
+                }
             }
             case "c" -> {
                 t.getT()[x][y] -= quantitatMalalts;
-                t.getT()[x + 1][y + 1] += quantitatMalalts;
+                if (x + 1>= t.getFiles() || y + 1>= t.getColumnes()){
+                    perFugides += quantitatMalalts;
+                } else {
+                    t.getT()[x + 1][y + 1] += quantitatMalalts;
+                }
             }
         }
     }
@@ -174,10 +211,7 @@ public class GestorTaulell {
         }
         return (sum);
     }
-    public static int sumDesplaçats(Taulell t,int quantitatMalalts){
-        int count=0;
-        count += quantitatMalalts;
-        int perPerMogudes = (count * 100)/sumArray(t);
-        return (perPerMogudes);
+    public static int sumDesplaçats(Taulell t, int perDesplaçades,int totalMalats){
+        return ((perDesplaçades * 100)/totalMalats);
     }
 }
