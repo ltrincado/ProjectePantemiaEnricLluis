@@ -1,44 +1,41 @@
 package prjuf2;
 
-import java.util.Random;
-
-public class Taulell
+public class Board
 {
     public float[][] getT() {
         return t;
     }
 
-    private int files;
-    private int columnes;
+    private int rows;
+    private int columns;
     private float[][] t;
 
-    public int getFiles() {
-        return files;
+    public int getRows() {
+        return rows;
     }
 
-    public void setFiles(int files) {
-        this.files = files;
+    public void setRows(int rows) {
+        this.rows = rows;
     }
 
-    public int getColumnes() {
-        return columnes;
+    public int getColumns() {
+        return columns;
     }
 
-    public void setColumnes(int columnes) {
-        this.columnes = columnes;
+    public void setColumns(int columns) {
+        this.columns = columns;
     }
 
 
-    public void setCasella(int i, int j, float value) {
+    public void setPosition(int i, int j, float value) {
 
         this.t[i][j] = value;
     }
 
-    public void createTaulellRandom(){
-        this.t = new float[files][columnes];
-        Random r = new Random();
-        for (int i = 0; i < files; i++) {
-            for (int j = 0; j < columnes; j++) {
+    public void createRandomBoard(){
+        this.t = new float[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 int random = (int) (Math.random()*(1-13)+10);
                 if (random < 0){
                     t[i][j] = -1;
@@ -50,10 +47,10 @@ public class Taulell
             }
         }
     }
-    public void createTaulellBuit(){
-        this.t = new float[files][columnes];
-        for (int i = 0; i < files; i++) {
-            for (int j = 0; j < columnes; j++) {
+    public void createEmptyBoard(){
+        this.t = new float[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 t[i][j] = 0;
             }
         }
@@ -63,8 +60,8 @@ public class Taulell
     @Override
     public String toString() {
         StringBuilder cad = new StringBuilder();
-        for (int i = 0; i < files; i++) {
-            for (int j = 0; j < columnes; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 if (t[i][j]==-1){
                     cad.append(Interficie.red+"X\t"+Interficie.reset);
                 }else{

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Utils {
 
-    public static int validateInt(Taulell t, String v1, String message, String errorIntMessage, String error0Message, int x, int y) {
+    public static int validateInt(Board t, String v1, String message, String errorIntMessage, String error0Message, int x, int y) {
 
         Scanner scanner = new Scanner(System.in);
         int ret = 0;
@@ -28,6 +28,7 @@ public class Utils {
                         Interficie.redMessage(error0Message);
                         validateLimits = false;
                     }
+                    break;
                 case "v1":
                     if (ret < 0 || ret > 2) {
                         Interficie.redMessage(error0Message);
@@ -35,19 +36,19 @@ public class Utils {
                     }
                     break;
                 case "f":
-                    if (ret - 1 < 0 || ret - 1 >= t.getFiles()) {
+                    if (ret - 1 < 0 || ret - 1 >= t.getRows()) {
                         Interficie.redMessage(error0Message);
                         validateLimits = false;
                     }
                     break;
                 case "c":
-                    if (ret - 1 < 0 || ret - 1 >= t.getColumnes()) {
+                    if (ret - 1 < 0 || ret - 1 >= t.getColumns()){
                         Interficie.redMessage(error0Message);
                         validateLimits = false;
                     }
                     break;
                 case "m":
-                    if (ret <= 0) {
+                    if (ret == 0 || ret < -1) {
                         Interficie.redMessage(error0Message);
                         validateLimits = false;
                     }
@@ -85,7 +86,7 @@ public class Utils {
         }
         return ret;
     }
-    public static String validateString(String message,String errorStringMessage){
+    public static String validateMove(String message, String errorStringMessage){
         Scanner scanner = new Scanner(System.in);
         String ret = "";
         boolean correct;
@@ -108,3 +109,4 @@ public class Utils {
         return ret;
     }
 }
+
