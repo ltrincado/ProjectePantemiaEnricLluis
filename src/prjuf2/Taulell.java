@@ -28,10 +28,6 @@ public class Taulell
         this.columnes = columnes;
     }
 
-    public float getCasella(int i, int j) {
-
-        return t[i][j];
-    }
 
     public void setCasella(int i, int j, float value) {
 
@@ -43,7 +39,14 @@ public class Taulell
         Random r = new Random();
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
-                t[i][j] = r.nextInt(10);
+                int random = (int) (Math.random()*(1-13)+10);
+                if (random < 0){
+                    t[i][j] = -1;
+                }else {
+                    t[i][j] = random;
+                }
+
+
             }
         }
     }
@@ -62,7 +65,11 @@ public class Taulell
         StringBuilder cad = new StringBuilder();
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
-                cad.append((int)t[i][j] + "\t");
+                if (t[i][j]==-1){
+                    cad.append(Interficie.red+"X\t"+Interficie.reset);
+                }else{
+                    cad.append(Interficie.yellow).append((int) t[i][j]).append("\t").append(Interficie.reset);
+                }
             }
             cad.append("\n");
         }

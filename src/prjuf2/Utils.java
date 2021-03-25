@@ -4,125 +4,106 @@ import java.util.Scanner;
 
 public class Utils {
 
-    public static int validarEnter(String missatge, String missatgeError){
+    public static int validateInt(Taulell t, String v1, String message, String errorIntMessage, String error0Message, int x, int y) {
+
         Scanner scanner = new Scanner(System.in);
-        int ret;
-        boolean correcte;
-        do{
-            System.out.println(missatge);
-            correcte=scanner.hasNextInt();
-            if(!correcte){
-                scanner.next();
-                System.out.println(missatgeError);
+        int ret = 0;
+        boolean correct;
+        boolean validateLimits = false;
+        while (!validateLimits) {
+            do {
+                Interficie.purpleMessage(message);
+                correct = scanner.hasNextInt();
+                if (!correct) {
+                    scanner.next();
+                    Interficie.redMessage(errorIntMessage);
+                }
+            } while (!correct);
+            ret = scanner.nextInt();
+            scanner.nextLine();
+            validateLimits = true;
+            switch (v1) {
+                case "v":
+                    if (ret < 0 || ret > 1) {
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
+                case "v1":
+                    if (ret < 0 || ret > 2) {
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
+                    break;
+                case "f":
+                    if (ret - 1 < 0 || ret - 1 >= t.getFiles()) {
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
+                    break;
+                case "c":
+                    if (ret - 1 < 0 || ret - 1 >= t.getColumnes()) {
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
+                    break;
+                case "m":
+                    if (ret <= 0) {
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
+                    break;
+                case "z":
+                    if (ret <= 0 || ret > (int)t.getT()[x][y]){
+                        Interficie.redMessage(error0Message);
+                        validateLimits = false;
+                    }
             }
-        }while(!correcte);
-        ret = scanner.nextInt();
-        scanner.nextLine();
-        return ret;
-    }
-    public static int validarEnterSol(){
-        Scanner scanner = new Scanner(System.in);
-        int ret;
-        boolean correcte;
-        do{
-            correcte=scanner.hasNextInt();
-            if(!correcte){
-                scanner.next();
-                System.out.println("You have to insert a numeric value");
-            }
-        }while(!correcte);
-        ret = scanner.nextInt();
-        scanner.nextLine();
-        return ret;
-    }
-    public static int validarRangFiles(Taulell t, String missatgeError) {
-        int ret = validarEnter("Insert the row you want","You have to insert a numeric value");
-        ret = ret-1;
-        while (ret >= t.getFiles() || ret<0) {
-            System.out.println(missatgeError);
-            ret = validarEnterSol()-1;
         }
         return ret;
     }
-    public static int validarRangColumnes(Taulell t, String missatgeError) {
-        int ret = validarEnter("Insert the column you want","You have to insert a numeric value");
-        ret = ret-1;
-        while (ret >= t.getColumnes() || ret<0) {
-            System.out.println(missatgeError);
-            ret = validarEnterSol()-1;
-        }
-        return ret;
-    }
-    public static int validarRangMalalts(String missatgeError) {
-        int ret = validarEnter("Number of sick person you want to insert","You have to insert a numeric value");
-        while (ret<=0) {
-            System.out.println(missatgeError);
-            ret = validarEnterSol();
-        }
-        return ret;
-    }
-    public static int validarSortida(String missatge) {
-        System.out.println(missatge);
-        int ret = validarEnterSol();
-        while (ret < 0 || ret > 1) {
-            System.out.println("Error, try again");
-            ret = validarEnterSol();
-        }
-        return ret;
-    }
-    public static float validarFloat(String missatge, String missatgeError){
+    public static float validateFloat(String message, String errorFloatMessage, String error0Message){
         Scanner scanner = new Scanner(System.in);
         float ret = 0;
-        boolean correcte;
-        boolean validacioLimits= false;
-        while (!validacioLimits) {
+        boolean correct;
+        boolean validateLimits= false;
+        while (!validateLimits) {
             do {
-                System.out.println(missatge);
-                correcte = scanner.hasNextFloat();
-                if (!correcte) {
+                Interficie.purpleMessage(message);
+                correct = scanner.hasNextFloat();
+                if (!correct) {
                     scanner.next();
-                    System.out.println(missatgeError);
+                    Interficie.redMessage(errorFloatMessage);
                 }
-            } while (!correcte);
+            } while (!correct);
             ret = scanner.nextFloat();
             scanner.nextLine();
-            validacioLimits=true;
+            validateLimits=true;
             if (ret <= 0) {
-                System.out.println("Valor no valid");
-                validacioLimits=false;
+                Interficie.redMessage(error0Message);
+                validateLimits=false;
             }
         }
         return ret;
     }
-    public static float validarFloatSol(String missatge){
+    public static String validateString(String message,String errorStringMessage){
         Scanner scanner = new Scanner(System.in);
-        float ret;
-        boolean correcte;
-        do{
-            System.out.println(missatge);
-            correcte=scanner.hasNextFloat();
-            if(!correcte){
-                scanner.next();
-                System.out.println("You have to insert a numeric value");
+        String ret = "";
+        boolean correct;
+        boolean validateChar=false;
+        while (!validateChar){
+            do {
+                Interficie.purpleMessage(message);
+                correct=scanner.hasNext();
+            }while (!correct);
+            ret = scanner.next().toLowerCase();
+            scanner.nextLine();
+            if (ret.equals("q")||ret.equals("w")||ret.equals("e")||ret.equals("a")
+                    ||ret.equals("d")||ret.equals("z")||ret.equals("x")||ret.equals("c")){
+                validateChar=true;
+            }else{
+                Interficie.redMessage(errorStringMessage);
+                validateChar=false;
             }
-        }while(!correcte);
-        ret = scanner.nextFloat();
-        scanner.nextLine();
-        return ret;
-    }
-    public static float validarRt(String missatgeError) {
-        float ret = validarFloat("Insert the RT (Transmission ratio)","You have to enter a numeric value");
-        while (ret<=0) {
-            System.out.println(missatgeError);
-            ret = validarFloatSol(null);
-        }
-        return ret;
-    }
-    public static float validarPercentatge(String missatgeError) {
-        float ret = validarFloat("You have selected globally heal in specifically '%'\nInsert the '%' that you want","You have to enter a numeric value");
-        while (ret<=0) {
-            System.out.println(missatgeError);
-            ret = validarFloatSol("");
         }
         return ret;
     }

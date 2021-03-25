@@ -5,72 +5,62 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Game game = new Game();
-        game.inici();
+        game.beginning();
     }
-    public void inici(){
+    public void beginning(){
         Scanner in = new Scanner(System.in);
         String[] menu = {
-                "MENÚ",
-                "1. Crear taulell random", "2. Crear taulell manual", "3. Introduir malalts", "4. Transmetre virus",
-                "5. Curar malalts", "6. Desplaçar malats", "7. Mostrar informació", "0. Sortir"
+                "\t       MENU",
+                "1. Create a random board", "2. Create an empty board", "3. Add sick people      ", "4. Pass on the virus    ",
+                "5. Heal sick people     ", "6. Move sick people    ", "7. Show information     ", "0. Quit                 "
         };
-        int opcio;
-        String[] dades = new String[4];
-        int perTotals;
-        int perCurades = 0;
-        GestorTaulell g = new GestorTaulell();
+        int option;
+        String[] data = new String[4];
+        BoardManager g = new BoardManager();
         Taulell t = new Taulell();
-        do {
-            Interficie.mostrarMenu(menu);
-            opcio = in.nextInt();
-            switch (opcio) {
-                case 1:
-                    Interficie.mostrarCapçalera("Has seleccionat l'opció de crear un taulell random");
-                    g.carregarR(t);
-                    g.totalMalats += g.sumArray(t);
+        Interficie.mostrarMenu(menu);
+        option = Utils.validateInt(t,"v1","Select '1' or '2' to start the game" ,"You must enter a numeric value",
+                "You must enter '0' , '1' or '2'",0,0);
+        while (option!=0){
+            switch (option) {
+                case 1 -> {
+                    Interficie.mostrarCapçalera("You have selected create a random board");
+                    g.loadRandom(t);
                     System.out.println(t.toString());
-                    break;
-                case 2:
-                    Interficie.mostrarCapçalera("Has seleccionat l'opció de crear el teu propi taulell");
-                    g.carregar(t);
+                }
+                case 2 -> {
+                    Interficie.mostrarCapçalera("You have selected create an empty board");
+                    g.loadEmpty(t);
                     System.out.println(t.toString());
-                    break;
-                case 3:
-                    Interficie.mostrarCapçalera("Has seleccionat l'opció d'introduir malalts");
-                    g.introduirMalalts(t);
+                }
+                case 3 -> {
+                    Interficie.mostrarCapçalera("You have selected add sick people");
+                    g.addSickPeople(t);
+                }
+                case 4 -> {
+                    Interficie.mostrarCapçalera("You have selected pass on the virus");
+                    g.transmitVirus(t);
+                }
+                case 5 -> {
+                    Interficie.mostrarCapçalera("You have selected heal sick people");
+                    g.healSickPeople(t);
+                    Interficie.mostrarMissatge(t.toString());
+                }
+                case 6 -> {
+                    Interficie.mostrarCapçalera("You have selected move sick people");
+                    g.moveSickPeople(t);
+                }
+                case 7 -> {
+                    Interficie.mostrarCapçalera("Show information");
+                    Interficie.mostrarDades(t, g, data);
+                    System.out.println();
                     System.out.println(t.toString());
-                    break;
-                case 4:
-                    Interficie.mostrarCapçalera("Has seleccionat l'opció de transmetre virus");
-                    g.transmetreVirus(t);
-                    System.out.println(t.toString());
-                    break;
-                case 5:
-                    perTotals = GestorTaulell.sumArray(t);
-                    Interficie.mostrarCapçalera("Has seleccionat l'opcio de curar malalts");
-                    g.curarMalalts(t);
-                    perCurades += perTotals - GestorTaulell.sumArray(t);
-                    System.out.println(t.toString());
-                    break;
-                case 6:
-                    Interficie.mostrarCapçalera("Has seleccionat l'opcio de desplaçar malalts");
-                    g.desplacarMalalts(t);
-                    System.out.println(t.toString());
-                    break;
-                case 7:
-                    dades[0] = "Número total de malalts actualment: " + GestorTaulell.sumArray(t);
-                    dades[1] = "Número total de persones curades: " + perCurades;
-                    dades[2] = "% que no ha complert el confinament: " + GestorTaulell.sumDesplaçats(t, g.perDesplacades, g.totalMalats) + "%";
-                    dades[3] = "Número total de persones fugides: " + g.perFugides;
-                    Interficie.mostrarCapçalera("Has seleccionat l'opció de mostrar informació");
-                    Interficie.mostrarDades(dades);
-                    System.out.println(t.toString());
-                    break;
-                case 0:
-                    System.out.println("GAME OVER");
-                    break;
+                }
             }
-        } while (opcio != 0);
+            Interficie.mostrarMenu(menu);
+            option = in.nextInt();
+        }
+        Interficie.redMessage("GAME OVER");
 
     }
 }
