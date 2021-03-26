@@ -4,6 +4,9 @@ Esquema principal del joc
 
 El joc es divideix en 7 opcions donades per un menú.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/1.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/2.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/3.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/4.png)
 
 Opció 1 -> Crear un taulell amb dimensions donades per l'usuari però amb malalts a cada posició aleatoris.  
 
