@@ -13,7 +13,12 @@ Opció 1 -> Crear un taulell amb dimensions donades per l'usuari però amb malal
 Opció 2 -> Crear un taulell buit amb dimensions donades per l'usuari.  
 
 Opció 3 -> Introduir malalts a les posicions que l'usuari desitji.  
-
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/5.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/6.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/7.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/8.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/9.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/10.png)  
 Opció 4 -> Transmetre el virus a totes les posicions del taulell mitjançant un valor float que dona l'usuari.  
 
 Opció 5 -> Curar malalts. Diferents opcions per curar als malalts que estan actualment al taulell.  
