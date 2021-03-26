@@ -74,7 +74,7 @@ Finalment el fitxer de classe Game és el fitxer des d'on executarem el programa
 
 **Link javadoc**  
 
-[JavaDoc](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/src/prjuf2/docs/allclasses-index.html)  
+[JavaDoc](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/src/prjuf2/docs)  
 
 
 
