@@ -72,7 +72,7 @@ mouen pel taulell.
 Finalment el fitxer de classe Game és el fitxer des d'on executarem el programa i es posaran en funció totes les funcions creades als altres fitxers de classe.  
 
 
-Link javadoc  
+**Link javadoc**  
 
 [JavaDoc]()  
 
