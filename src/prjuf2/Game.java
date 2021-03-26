@@ -3,11 +3,18 @@ package prjuf2;
 import java.util.Scanner;
 
 public class Game {
+    /**
+     * Executa el main.
+     */
     public static void main(String[] args) {
         Game game = new Game();
         game.beginning();
     }
-    public void beginning(){
+
+    /**
+     * Executa el programa.
+     */
+    public void beginning() {
         Scanner in = new Scanner(System.in);
         String[] menu = {
                 "\t       MENU",
@@ -19,9 +26,9 @@ public class Game {
         BoardManager g = new BoardManager();
         Board t = new Board();
         Interficie.showMenu(menu);
-        option = Utils.validateInt(t,"v1","Select '1' or '2' to start the game" ,"You must enter a numeric value",
-                "You must enter '0' , '1' or '2'",0,0);
-        while (option!=0){
+        option = Utils.validateInt(t, "v1", "Select '1' or '2' to start the game", "You must enter a numeric value",
+                "You must enter '0' , '1' or '2'", 0, 0);
+        while (option != 0) {
             switch (option) {
                 case 1 -> {
                     Interficie.showHeader("You have selected create a random board");
@@ -44,7 +51,7 @@ public class Game {
                 case 5 -> {
                     Interficie.showHeader("You have selected heal sick people");
                     g.healSickPeople(t);
-                    if (BoardManager.sumArray(t)!=0){
+                    if (BoardManager.sumArray(t) != 0) {
                         Interficie.showMessage(t.toString());
                     }
                 }
@@ -60,7 +67,7 @@ public class Game {
                 }
             }
             Interficie.showMenu(menu);
-            option = in.nextInt();
+            option = Utils.validateInt(t, "menu", "Select an option", "Please enter a numeric value", "Please enter one of the following menu numbers", 0, 0);
         }
         Interficie.redMessage("GAME OVER");
 
