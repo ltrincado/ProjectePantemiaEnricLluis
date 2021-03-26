@@ -17,7 +17,7 @@ Opció 3 -> Introduir malalts a les posicions que l'usuari desitji.
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/5.png)  
 *opció 3 del menú, amb restriccions.*  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/6.png)  
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/7.png) 
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/7.png)  
 *afegir posicions bloquejades al taulell.*  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/8.png)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/9.png)  
