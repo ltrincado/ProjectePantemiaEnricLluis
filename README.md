@@ -21,7 +21,7 @@ Opció 3 -> Introduir malalts a les posicions que l'usuari desitji.
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/10.png)  
 Opció 4 -> Transmetre el virus a totes les posicions del taulell mitjançant un valor float que dona l'usuari.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/15.png)  
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/16.png)
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/16.png)  
 Opció 5 -> Curar malalts. Diferents opcions per curar als malalts que estan actualment al taulell.  
 
 Opció 6 -> Desplaçar malalts. En aquesta opció podem desplaçar diferents malalts d'una posició a una altra mitjançant un petit menú de direccions.  
