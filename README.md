@@ -80,7 +80,7 @@ Primer crearem els objectes necessaris per anar baixant pels nivells i accedir a
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Objectes.PNG)  
 Seguidament utilitzarem els bucles necessaris per llegir tota la informació dels nivells dessitjats i extreure la que demanada.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Bucles.PNG)  
-Resultat extret de l'API de dades COVID.
+Resultat extret de l'API de dades COVID.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Resultats.PNG)  
 **Link javadoc**  
 
