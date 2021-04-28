@@ -2,6 +2,10 @@
 
 Esquema principal del joc  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Esquema.PNG)  
+  
+    
+      
+Explicació de decisions de disseny preses.
 El joc es divideix en 7 opcions donades per un menú.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/1.png)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/2.png)  
@@ -71,7 +75,10 @@ mouen pel taulell.
 
 Finalment el fitxer de classe Game és el fitxer des d'on executarem el programa i es posaran en funció totes les funcions creades als altres fitxers de classe.  
 
-
+Consum de l'API REST de dades COVID.  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Objectes.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Bucles.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Resultat.png)  
 **Link javadoc**  
 
 [JavaDoc](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/src/prjuf2/docs)  
