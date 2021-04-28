@@ -1,11 +1,11 @@
 # ProjectePandemiaEnricLluis
 
-Esquema principal del joc  
+**Esquema principal del joc.**  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Esquema.PNG)  
   
     
       
-Explicació de decisions de disseny preses.
+**Explicació de decisions de disseny preses.**
 El joc es divideix en 7 opcions donades per un menú.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/1.png)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/2.png)  
@@ -44,7 +44,7 @@ Opció 7 -> Mostrar informació. En aquesta opció es pot mostrar la situació a
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/14.png)  
 *opció 0 del menú, per a sortir del joc.*  
 
-Explicació de les decisions de disseny preses  
+**Explicació de les decisions de disseny preses**  
 
 Hem decidit utilitzar diferents colors per al printat.  
 
@@ -53,7 +53,7 @@ Principalment hem utilitzat el vermell pels missatges d'error, el groc pels miss
 El menú té un printat diferent amb asteriscs al voltant.  
 
 
-Explicació de les distribuicions de funcions  
+**Explicació de les distribuicions de funcions**  
 
 Hem optat per treballar amb els diferents fitxers de classe (BoardManager, Board, Interficie, Utils, Game), per tal de tenir ben repartides les funcions i que no sigui complicat trobar-les o que no ens poguem perdre pel programa.  
 
@@ -75,7 +75,7 @@ mouen pel taulell.
 
 Finalment el fitxer de classe Game és el fitxer des d'on executarem el programa i es posaran en funció totes les funcions creades als altres fitxers de classe.  
 
-Consum de l'API REST de dades COVID.  
+**Consum de l'API REST de dades COVID.**  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Objectes.PNG)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Bucles.PNG)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Resultats.PNG)  
