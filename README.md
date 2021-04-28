@@ -1,7 +1,7 @@
 # ProjectePandemiaEnricLluis
 
 Esquema principal del joc  
-
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/esquema.png)  
 El joc es divideix en 7 opcions donades per un menú.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/1.png)  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/2.png)  
