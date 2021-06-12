@@ -78,7 +78,7 @@ Finalment el fitxer de classe Game és el fitxer des d'on executarem el programa
 **Consum de l'API REST de dades COVID.**  
 Primer crearem els objectes necessaris per anar baixant pels nivells i accedir a on volguem.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Objectes.PNG)  
-Seguidament utilitzarem els bucles necessaris per llegir tota la informació dels nivells dessitjats i extreure la que demanada.  
+Seguidament utilitzarem els bucles necessaris per llegir tota la informació dels nivells dessitjats i extreure la informació demanada.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Bucles.PNG)  
 Resultat extret de l'API de dades COVID.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Resultats.PNG)  
