@@ -42,7 +42,7 @@ Opció 7 -> Mostrar informació. En aquesta opció es pot mostrar la situació a
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
 *opció 7 del menú, mostrant tota la informació i printat del taulell.*
 Opció 8 -> Carregar taulell predefinit. En aquesta opció podem seleccionar un taulell predefinit que està guardat en un fitxer de text.
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
 *opció 8 del menú, carregant un taulell guardat previament en un fitxer de text.*
 Opció 9 del menú, mostrar dades del COVID des de una API.
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
