@@ -42,12 +42,12 @@ Opció 7 -> Mostrar informació. En aquesta opció es pot mostrar la situació a
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
 *opció 7 del menú, mostrant tota la informació i printat del taulell.*
 Després aquesta informació queda guardada en un fitxer de text.
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Captura de pantalla 2021-06-13 a les 21.40.39.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Capturadepantalla2021-06-13ales21.40.39.png)  
 Opció 8 -> Carregar taulell predefinit. En aquesta opció podem seleccionar un taulell predefinit que està guardat en un fitxer de text.
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master//Captura de pantalla 2021-06-13 a les 21.41.03.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master//Capturadepantalla2021-06-13ales21.41.03.png)  
 *opció 8 del menú, carregant un taulell guardat previament en un fitxer de text.*
 Opció 9 del menú, mostrar dades del COVID des de una API.
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Captura de pantalla 2021-06-13 a les 21.46.47.png)  
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Capturadepantalla2021-06-13ales21.46.47.png)  
 *opció 9 del menú, dades de la COVID 19 d'una API.*
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/14.png)  
 *opció 0 del menú, per a sortir del joc.*  
