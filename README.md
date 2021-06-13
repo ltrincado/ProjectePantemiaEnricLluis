@@ -41,6 +41,8 @@ Opció 6 -> Desplaçar malalts. En aquesta opció podem desplaçar diferents mal
 Opció 7 -> Mostrar informació. En aquesta opció es pot mostrar la situació actual del taulell amb diferents dades i podem veure el taulell actual.  
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
 *opció 7 del menú, mostrant tota la informació i printat del taulell.*
+Després aquesta informació queda guardada en un fitxer de text.
+![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Captura de pantalla 2021-06-13 a les 21.40.23.png)  
 Opció 8 -> Carregar taulell predefinit. En aquesta opció podem seleccionar un taulell predefinit que està guardat en un fitxer de text.
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
 *opció 8 del menú, carregant un taulell guardat previament en un fitxer de text.*
