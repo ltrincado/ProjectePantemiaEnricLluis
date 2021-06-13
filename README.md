@@ -46,7 +46,7 @@ Opció 8 -> Carregar taulell predefinit. En aquesta opció podem seleccionar un 
 *opció 8 del menú, carregant un taulell guardat previament en un fitxer de text.*
 Opció 9 del menú, mostrar dades del COVID des de una API.
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/13.png)  
-*opció 9 del menú, dades de la COVID 19 d'una API.
+*opció 9 del menú, dades de la COVID 19 d'una API.*
 ![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/14.png)  
 *opció 0 del menú, per a sortir del joc.*  
 
