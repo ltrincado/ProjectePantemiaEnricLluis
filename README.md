@@ -1,7 +1,7 @@
 # ProjectePandemiaEnricLluis
 
 **Esquema principal del joc.**  
-![Alt text](https://github.com/ltrincado/ProjectePantemiaEnricLluis/blob/master/imatges/Esquema.PNG)  
+![Alt text](imatges/Esquema.PNG)  
   
     
       
